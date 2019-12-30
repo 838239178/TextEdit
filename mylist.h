@@ -71,7 +71,7 @@ int DeleteList(LNodeP head,int begin,int count)                     //批量删除
 {
 	if (!head->next) return ERROR;
 	Positon b = FindList(head, begin);                             //找到待删除的前一个结点
-	Positon e = FindList(b, begin+count-1)->next->next;            //找到待删除的最后一个的下一个结点（从b开始找）
+	Positon e = FindList(head, begin+count-1)->next->next;         //找到待删除的最后一个的下一个结点（从b开始找）
 	Positon q = b->next;                                           //把指针q定位在待删除的第一个节点
 	if (!b) return ERROR;	                                       //位置不存在
 	for (Positon i = q->next; i != e; q = i, i = i->next)          //用指针i引导q，释放q指向的储存区
