@@ -54,7 +54,7 @@ int str_strKMP(char* s, char* p)
 	int j = 0;
 	int sLen = str_len(s);
 	int pLen = str_len(p);
-	int* next = new int[pLen];
+	int* next = new int[pLen+1];
 	MakeNext(next, p);
 	while (i < sLen && j < pLen)
 	{
